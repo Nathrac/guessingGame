@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 511796331}
   - component: {fileID: 511796330}
   - component: {fileID: 511796329}
+  - component: {fileID: 511796332}
   m_Layer: 0
   m_Name: DisplayBall
   m_TagString: Untagged
@@ -495,6 +496,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511796327}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &511796332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511796327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e8e5bbd324cfe43a075da65d310fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonColors:
+  - {fileID: 2100000, guid: 7be68f2990e79084db75b298f4887584, type: 2}
+  - {fileID: 2100000, guid: 203a184a8dc2d6849b227de69f0f713e, type: 2}
+  - {fileID: 2100000, guid: 1acc75cec1cc184438855b2ff49128cf, type: 2}
+  - {fileID: 2100000, guid: 61f2fb1047d9edf4097c71b6a48caeda, type: 2}
+  - {fileID: 2100000, guid: 56a1ceba64d749b45ad4628e90e4acf0, type: 2}
+  - {fileID: 2100000, guid: 628d68d6d9d25884ea9dd4a6f1e0fedf, type: 2}
 --- !u!1 &558989966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4618537887346636416, guid: a774ac1e3a4db704082087ee7f92b81d, type: 3}

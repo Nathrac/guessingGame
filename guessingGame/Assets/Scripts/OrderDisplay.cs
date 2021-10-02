@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class OrderDisplay : MonoBehaviour
 {
+
+
+    List<int> taskOrder = new List<int>();
+    List<int> playerOrder = new List<int>();
+    public List<Material> buttonColors = new List<Material>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +19,7 @@ public class OrderDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 }
