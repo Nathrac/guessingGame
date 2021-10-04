@@ -194,7 +194,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 56a1ceba64d749b45ad4628e90e4acf0, type: 2}
   - {fileID: 2100000, guid: 628d68d6d9d25884ea9dd4a6f1e0fedf, type: 2}
   flashLength: 1
-  downTime: 0
+  downTime: 0.35
   recipe: 
 --- !u!23 &77234939 stripped
 MeshRenderer:

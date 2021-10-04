@@ -20,6 +20,9 @@ public class Games : MonoBehaviour
 
     public List<int> recipe = new List<int>();
     int placeInRecipe;
+   
+    bool playerCanInput;
+    int inputRecipe;
 
 
     // Start is called before the first frame update
@@ -54,6 +57,7 @@ public class Games : MonoBehaviour
             if (placeInRecipe >= recipe.Count)
             {
                 shouldDarken = false;
+                playerCanInput = true;
             }
             else
             {
@@ -72,32 +76,57 @@ public class Games : MonoBehaviour
     public void StartGame()
     {
         placeInRecipe = 0;
+        inputRecipe = 0;
+        recipe.Clear();
+        
 
         AddToRecipe();
     }
 
     public void optionPicked(int choice)
     {
-        if(optionChoice == choice)
+        if (playerCanInput)
         {
-            Debug.Log("Correct");
-        }
-        else
-        {
-            Debug.Log("Wrong");
+            
+            if (recipe[inputRecipe] == choice)
+            {
+                Debug.Log("Correct");
 
+                inputRecipe++;
+
+                if (inputRecipe >= recipe.Count)
+                {
+                    inputRecipe = 0;
+                    placeInRecipe = 0;
+                   
+                    AddToRecipe();
+
+                    playerCanInput = false;
+                }
+            }
+            else
+            {
+                Debug.Log("Wrong");
+                playerCanInput = false;
+
+            }
         }
     }
 
     private void AddToRecipe()
     {
-        optionChoice = Random.Range(0, colors.Length);
+        recipe.Clear();
+        for (int i = 0; i < 4; i++)
+        {
+            optionChoice = Random.Range(0, colors.Length);
 
-        recipe.Add(optionChoice);
+            recipe.Add(optionChoice);
 
-        colors[recipe[placeInRecipe]].material = lightMat[recipe[placeInRecipe]];
+            colors[recipe[placeInRecipe]].material = lightMat[recipe[placeInRecipe]];
 
-        flashLengthCount = flashLength;
-        shouldFlash = true;
+            flashLengthCount = flashLength;
+            shouldFlash = true;
+        }
+     
     }
 }
