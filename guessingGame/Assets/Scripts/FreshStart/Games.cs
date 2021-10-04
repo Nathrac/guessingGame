@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Games : MonoBehaviour
 {
-    public Renderer[] colors;
-    public Material[] lightMat;
-    public Material[] darkMat;
+    [SerializeField] Renderer[] colors;
+    [SerializeField] Material[] lightMat;
+    [SerializeField] Material[] darkMat;
+   
 
     int optionChoice;
 
-    public float flashLength;
+    [SerializeField] float flashLength;
     float flashLengthCount;
-    public float downTime;
+    [SerializeField] float downTime;
     float downTimeCount;
+    [SerializeField] float startWait;
+
 
     bool shouldFlash;
     bool shouldDarken;
@@ -24,11 +28,10 @@ public class Games : MonoBehaviour
     bool playerCanInput;
     int inputRecipe;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        StartGame();
+        StartCoroutine(Begin());
     }
 
     // Update is called once per frame
@@ -90,7 +93,6 @@ public class Games : MonoBehaviour
             
             if (recipe[inputRecipe] == choice)
             {
-                Debug.Log("Correct");
 
                 inputRecipe++;
 
@@ -102,6 +104,10 @@ public class Games : MonoBehaviour
                     AddToRecipe();
 
                     playerCanInput = false;
+
+                    Points.score += 1;
+                    Debug.Log("Correct");
+
                 }
             }
             else
@@ -128,5 +134,10 @@ public class Games : MonoBehaviour
             shouldFlash = true;
         }
      
+    }
+    IEnumerator Begin()
+    {
+        yield return new WaitForSeconds(startWait);
+        StartGame();
     }
 }
