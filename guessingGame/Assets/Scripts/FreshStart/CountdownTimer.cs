@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour
 {
 
-    float timeNow = 0f;
-    float timeStart = 120f;
+    public float timeNow = 0f;
+    public float timeStart;
 
     [SerializeField] Text countdown;
 
@@ -27,7 +27,7 @@ public class CountdownTimer : MonoBehaviour
         {
             timeNow = 0;
         }
-        if (timeNow < 30)
+        if (timeNow < 10)
         {
             countdown.color = Color.red;
         }

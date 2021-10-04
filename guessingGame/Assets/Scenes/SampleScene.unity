@@ -197,6 +197,8 @@ MonoBehaviour:
   downTime: 0.35
   startWait: 2
   recipe: 
+  playerCanInput: 0
+  colorGroup: {fileID: 62313095}
 --- !u!23 &77234939 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1573891548351342743, guid: a774ac1e3a4db704082087ee7f92b81d, type: 3}
@@ -353,6 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124bdf2eacd632d48996fd1c4f397315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeNow: 0
+  timeStart: 60
   countdown: {fileID: 669532388}
 --- !u!114 &669532388
 MonoBehaviour:

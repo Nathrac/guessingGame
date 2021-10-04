@@ -14,7 +14,7 @@ public class HitDetection : MonoBehaviour
 
     private Games LogicController;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,14 +32,20 @@ public class HitDetection : MonoBehaviour
     //When player clicks a color, it swaps to a lighter version to confirm the color was picked
     private void OnMouseDown()
     {
-        PickedColor();
+        if (LogicController.playerCanInput == true)
+        {
+            PickedColor();
+        }
     }
 
     //Reverts colour back to noraml when not picked
     private void OnMouseUp()
     {
-        UnpickedColor();
-        LogicController.optionPicked(identity);
+        if (LogicController.playerCanInput == true)
+        {
+            UnpickedColor();
+            LogicController.optionPicked(identity);
+        }
     }
 
     //Renders colour to light material

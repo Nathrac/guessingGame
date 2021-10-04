@@ -25,13 +25,18 @@ public class Games : MonoBehaviour
     public List<int> recipe = new List<int>();
     int placeInRecipe;
    
-    bool playerCanInput;
+    public bool playerCanInput;
     int inputRecipe;
+
+    [SerializeField] GameObject colorGroup;
+    CountdownTimer Timer;
 
     // Start is called before the first frame update
     void Start()
     {
+        colorGroup.SetActive(true);
         StartCoroutine(Begin());
+        Timer = FindObjectOfType<CountdownTimer>();
     }
 
     // Update is called once per frame
@@ -74,6 +79,11 @@ public class Games : MonoBehaviour
                 }
             }
         }
+        if (Timer.timeNow <= 0)
+        {
+            colorGroup.SetActive(false);
+            playerCanInput = false;
+        }
     }
 
     public void StartGame()
@@ -113,7 +123,7 @@ public class Games : MonoBehaviour
             else
             {
                 Debug.Log("Wrong");
-                playerCanInput = false;
+                StartCoroutine(Begin());
 
             }
         }
