@@ -5,8 +5,8 @@ using UnityEngine;
 public class HitDetection : MonoBehaviour
 {
 
-    [SerializeField] Material drkMaterial;
-    [SerializeField] Material lightMaterial;
+    [SerializeField] Material[] drkMaterial;
+    [SerializeField] Material[] lightMaterial;
 
     Renderer render;
 
@@ -20,6 +20,7 @@ public class HitDetection : MonoBehaviour
     {
         render = GetComponent<Renderer>(); //access renderer to change button colors
         render.enabled = true;
+        render.material = drkMaterial[identity];
         LogicController = FindObjectOfType<Games>(); //Setting LogicController as reference to script
     }
 
@@ -45,12 +46,12 @@ public class HitDetection : MonoBehaviour
     //Renders colour to light material
     public void PickedColor()
     {
-        render.sharedMaterial = lightMaterial;
+        render.sharedMaterial = lightMaterial[identity];
     }
 
     //Renders color to normal dark material
     public void UnpickedColor()
     {
-        render.sharedMaterial = drkMaterial;
+        render.sharedMaterial = drkMaterial[identity];
     }
 }

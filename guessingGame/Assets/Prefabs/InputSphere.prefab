@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4618537887346636416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.34, y: -1.683, z: 0.62}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,5 +108,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff388c5d01f294b4c87bef5e0a898f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drkMaterial: {fileID: 0}
-  lightMaterial: {fileID: 0}
+  drkMaterial:
+  - {fileID: 2100000, guid: 7be68f2990e79084db75b298f4887584, type: 2}
+  - {fileID: 2100000, guid: 203a184a8dc2d6849b227de69f0f713e, type: 2}
+  - {fileID: 2100000, guid: 1acc75cec1cc184438855b2ff49128cf, type: 2}
+  - {fileID: 2100000, guid: 61f2fb1047d9edf4097c71b6a48caeda, type: 2}
+  - {fileID: 2100000, guid: 56a1ceba64d749b45ad4628e90e4acf0, type: 2}
+  - {fileID: 2100000, guid: 628d68d6d9d25884ea9dd4a6f1e0fedf, type: 2}
+  lightMaterial:
+  - {fileID: 2100000, guid: df78e462c78ee10498ef442805b6bd26, type: 2}
+  - {fileID: 2100000, guid: bbacd928e1f448d48b497b6e828dacf5, type: 2}
+  - {fileID: 2100000, guid: d11cfb620f346de40bc41c1c4278712e, type: 2}
+  - {fileID: 2100000, guid: d6da83500a4c7514097729372a47b5b6, type: 2}
+  - {fileID: 2100000, guid: ba1d160d15c59a146a1190b32a7900ee, type: 2}
+  - {fileID: 2100000, guid: b74ae757cfcfb8642a1cf89d6de7eaf3, type: 2}
+  identity: 0

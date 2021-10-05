@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Games : MonoBehaviour
 {
-    [SerializeField] Renderer[] colors; //options for random recipe list
+    [SerializeField] Material[] colors; //options for random recipe list
     [SerializeField] Material[] lightMat; //materials for lighter version to represent flash to either show options or click
     [SerializeField] Material[] darkMat; //materials to set options back to normal
-   
 
+    Renderer rend;
     int optionChoice;
 
     //times for recipe flash, time between flashes and start game that can be changed in the editor.
@@ -41,6 +41,7 @@ public class Games : MonoBehaviour
         colorGroup.SetActive(true);
         StartCoroutine(Begin()); // coroutine with startgame method so that there can be a delay before color flashes
         Timer = FindObjectOfType<CountdownTimer>(); //initializing Timer class with countdownTimer script acces 
+        rend = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -53,7 +54,7 @@ public class Games : MonoBehaviour
 
             if (flashLengthCount < 0) //if flash length is less than zero(aka no longer flashing), material is dark/neutral and place in recipe is moved up. 
             {
-                colors[recipe[placeInRecipe]].material = darkMat[recipe[placeInRecipe]];
+                colors[recipe[placeInRecipe]] = darkMat[recipe[placeInRecipe]];
                 shouldFlash = false;
 
                 shouldDarken = true;
@@ -76,7 +77,7 @@ public class Games : MonoBehaviour
             {
                 if (downTimeCount < 0)//object lights up as next object in recipe sequence 
                 {
-                    colors[recipe[placeInRecipe]].material = lightMat[recipe[placeInRecipe]];
+                    colors[recipe[placeInRecipe]] = lightMat[recipe[placeInRecipe]];
 
                     flashLengthCount = flashLength;
                     shouldFlash = true;
@@ -149,7 +150,7 @@ public class Games : MonoBehaviour
 
             recipe.Add(optionChoice);
 
-            colors[recipe[placeInRecipe]].material = lightMat[recipe[placeInRecipe]]; //flashes the random component material but in a lighter material as to show player
+            colors[recipe[placeInRecipe]] = lightMat[recipe[placeInRecipe]]; //flashes the random component material but in a lighter material as to show player
 
             flashLengthCount = flashLength;
             shouldFlash = true;
