@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawn
+  - red
+  - blue
+  - green
+  - yellow
+  - pink
+  - teal
   layers:
   - Default
   - TransparentFX
