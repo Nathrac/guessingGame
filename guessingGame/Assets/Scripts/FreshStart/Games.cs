@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Games : MonoBehaviour
 {
-    [SerializeField] Material[] colors; //options for random recipe list
+    //public List<Renderer> colors = new List<Renderer>(); //options for random recipe list
     [SerializeField] Material[] lightMat; //materials for lighter version to represent flash to either show options or click
     [SerializeField] Material[] darkMat; //materials to set options back to normal
 
-    Renderer rend;
+   
     int optionChoice;
 
     //times for recipe flash, time between flashes and start game that can be changed in the editor.
@@ -41,7 +41,7 @@ public class Games : MonoBehaviour
         colorGroup.SetActive(true);
         StartCoroutine(Begin()); // coroutine with startgame method so that there can be a delay before color flashes
         Timer = FindObjectOfType<CountdownTimer>(); //initializing Timer class with countdownTimer script acces 
-        rend = GetComponent<Renderer>();
+       
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class Games : MonoBehaviour
 
             if (flashLengthCount < 0) //if flash length is less than zero(aka no longer flashing), material is dark/neutral and place in recipe is moved up. 
             {
-                colors[recipe[placeInRecipe]] = darkMat[recipe[placeInRecipe]];
+                darkMat[recipe[placeInRecipe]] = darkMat[recipe[placeInRecipe]];
                 shouldFlash = false;
 
                 shouldDarken = true;
@@ -77,7 +77,7 @@ public class Games : MonoBehaviour
             {
                 if (downTimeCount < 0)//object lights up as next object in recipe sequence 
                 {
-                    colors[recipe[placeInRecipe]] = lightMat[recipe[placeInRecipe]];
+                    darkMat[recipe[placeInRecipe]] = lightMat[recipe[placeInRecipe]];
 
                     flashLengthCount = flashLength;
                     shouldFlash = true;
@@ -146,11 +146,11 @@ public class Games : MonoBehaviour
         recipe.Clear();
         for (int i = 0; i < recipeLenght; i++) //sets recipe length to integer that is chosen in the inspector so as not to hard code length
         {
-            optionChoice = Random.Range(0, colors.Length); //chooses randomly from color array filled with object render materials.
+            optionChoice = Random.Range(0, darkMat.Length); //chooses randomly from color array filled with object render materials.
 
             recipe.Add(optionChoice);
 
-            colors[recipe[placeInRecipe]] = lightMat[recipe[placeInRecipe]]; //flashes the random component material but in a lighter material as to show player
+            darkMat[recipe[placeInRecipe]] = lightMat[recipe[placeInRecipe]]; //flashes the random component material but in a lighter material as to show player
 
             flashLengthCount = flashLength;
             shouldFlash = true;
