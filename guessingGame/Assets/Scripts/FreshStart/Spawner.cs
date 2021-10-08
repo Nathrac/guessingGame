@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
         {
             GameObject ball = Instantiate(ballPrefab, spawnPoints[i].transform, false);
             ball.GetComponent<HitDetection>().identity = i;
+            ball.tag = i.ToString();
 
         }
         
