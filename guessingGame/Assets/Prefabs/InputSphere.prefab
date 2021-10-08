@@ -122,4 +122,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d6da83500a4c7514097729372a47b5b6, type: 2}
   - {fileID: 2100000, guid: ba1d160d15c59a146a1190b32a7900ee, type: 2}
   - {fileID: 2100000, guid: b74ae757cfcfb8642a1cf89d6de7eaf3, type: 2}
+  render: {fileID: 0}
   identity: 0
+  flashLength: 1
+  downTime: 0.35
+  startWait: 2
+  resetWait: 2
+  recipe: 
+  recipeLenght: 0
+  playerCanInput: 0
+  colorGroup: {fileID: 0}

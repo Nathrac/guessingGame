@@ -8,7 +8,7 @@ public class HitDetection : MonoBehaviour
     [SerializeField] Material[] drkMaterial;
     [SerializeField] Material[] lightMaterial;
 
-    Renderer render;
+    public Renderer render;
 
     public int identity;
 

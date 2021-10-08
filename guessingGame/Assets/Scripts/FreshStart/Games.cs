@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Games : MonoBehaviour
 {
+
     [SerializeField] Material[] lightMat; //materials for lighter version to represent flash to either show options or click
     [SerializeField] Material[] darkMat; //materials to set options back to normal
     
+
     int optionChoice;
 
     //times for recipe flash, time between flashes and start game that can be changed in the editor.
@@ -75,6 +77,7 @@ public class Games : MonoBehaviour
             {
                 if (downTimeCount < 0)//object lights up as next object in recipe sequence 
                 {
+
                     GameObject.FindGameObjectWithTag(recipe[placeInRecipe].ToString()).GetComponent<Renderer>().material = lightMat[recipe[placeInRecipe]];
 
                     flashLengthCount = flashLength;
